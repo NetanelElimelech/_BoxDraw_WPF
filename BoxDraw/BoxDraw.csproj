@@ -63,6 +63,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Box.cs" />
+    <Compile Include="BoxLine.cs" />
+    <Compile Include="CornerPoint.cs" />
+    <Compile Include="DataBinding.cs" />
+    <Compile Include="GlassSize.cs" />
+    <Compile Include="IDrawLine.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

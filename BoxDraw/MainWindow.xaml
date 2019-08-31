@@ -5,8 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BoxDraw"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="950" Width="1500">
+    <Grid x:Name="grid" Margin="1,0,-1,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Canvas x:Name="DrawCanvas" Grid.Column="1" Margin="30,60,0,0" Width="1000" Height="400" VerticalAlignment="Top" HorizontalAlignment="Left">
+        </Canvas>
+        <Canvas x:Name="SizeCanvas" Grid.Column="1" Margin="30,460,0,0" Width="1000" Height="400" VerticalAlignment="Top" HorizontalAlignment="Left">
+        </Canvas>
+        <Rectangle Grid.Column="1" HorizontalAlignment="Left" Height="840" Margin="10,40,0,0" VerticalAlignment="Top" Width="1040" Stroke="Black" RadiusX="5" RadiusY="5"/>
+        <TextBox x:Name="HeightTextBox" Text="{Binding Height, Mode=TwoWay}" Grid.Column="0" HorizontalAlignment="Left" Margin="183,86,0,0" VerticalAlignment="Top" Height="20" Width="40"/>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="119,94,0,0" Text="Height" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="LengthTextBox" Text="{Binding Length, Mode=TwoWay}" Grid.Column="0" HorizontalAlignment="Left" Margin="183,141,0,0" VerticalAlignment="Top" Width="40" Height="20.3"/>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="119,149,0,0" Text="Length" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="WidthTextBox" Text="{Binding Width, Mode=TwoWay}" Grid.Column="0" HorizontalAlignment="Left" Margin="183,186,0,0" VerticalAlignment="Top" Width="40" Height="20"/>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="119,194,0,0" Text="Width" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="266,294,0,0" Text="cm" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="208,244,0,0" Text="x" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="119,244,0,0" Text="Top" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Text="{Binding Length, Mode=OneWay}"  Grid.Column="0" HorizontalAlignment="Left" Margin="164,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40" Height="20"/>
+        <TextBlock Text="{Binding Width, Mode=OneWay}" Grid.Column="0" HorizontalAlignment="Left" Margin="220,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40" Height="20"/>
+        <TextBox Text="{Binding Thickness, Mode=TwoWay}" Grid.Column="0" HorizontalAlignment="Left" Margin="183,286,0,0" VerticalAlignment="Top" Width="40" Height="20" />
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="66,294,0,0" Text="Glass Thickness" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="292,244,0,0" Text="cm" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="266,190,0,0" Text="cm" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="266,149,0,0" Text="cm" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="266,97,0,0" Text="cm" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <CheckBox Content="Grinding" Grid.Column="0" HorizontalAlignment="Left" Margin="183,350,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="9,563,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="114" Width="14"><Run Text="H"/><LineBreak/><Run Text="e"/><LineBreak/><Run Text="i"/><LineBreak/><Run Text="g"/><LineBreak/><Run Text="h"/><LineBreak/><Run Text="t"/></TextBlock>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="155,805,0,0" Text="Length" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="258,751,0,0" Text="Width" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto" Width="117">
+        </TextBlock>
+        <Button x:Name="Calculate" Content="Calculate" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="146,515,0,0" Height="58" Width="186" FontSize="20" Click="DrawBox_Click"/>
+        <TextBlock Text="{Binding GlassSizeString, Mode=OneWay}"  Grid.Column="1" HorizontalAlignment="Left" Margin="30,500,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="300" Height="100" FontSize="20"/>
     </Grid>
 </Window>
