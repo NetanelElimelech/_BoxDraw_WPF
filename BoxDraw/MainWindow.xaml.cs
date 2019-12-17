@@ -46,27 +46,32 @@ namespace BoxDraw
         {
             ClearCanvas();
 
+            //If width is greater than width, swap them
             box.SwapLengthWidth();
 
+            //Calc diagonal shift for drawing the top and the both sides
             box._widthShift = box.CalcWidthShift(box._width);
 
+            // Calc the total size of the box, incl. the top and the side
             double totalHeight = box.CalcTotalHeight(box._height, box._widthShift);
             double totalWidth = box.CalcTotalHeight(box._length, box._widthShift);
 
+            //Resize the box to fit it into the canvas
             double resizeFactor = box.CalcResizeFactor(DrawCanvas.Height, DrawCanvas.Width, totalHeight, totalWidth);
-
             double heightResized = box.ResizeHeightForDraw(resizeFactor, box._height);
             double widthResized = box.ResizeLengthForDraw(resizeFactor, box._length);
             double widthShiftResized = box.ResizeWidthShiftForDraw(resizeFactor, box._width);
 
+            //Calc corner points (first - front and back, then - the sides: shifted)
             Dictionary<string, CornerPoint> CornerPoints = CalcCornerPoints(heightResized, widthResized, widthShiftResized, DrawCanvas.Height);
             Dictionary<string, CornerPoint> ShiftedCornerPoints = ShiftCornerPoints(heightResized, widthResized, widthShiftResized, DrawCanvas.Height, DrawCanvas.Width, CornerPoints);
-            Dictionary<string, Line> BoxLines = CalcLines(ShiftedCornerPoints);
 
+            //Calc and draw the outer contour of the box
+            Dictionary<string, Line> BoxLines = CalcLines(ShiftedCornerPoints);
             DrawLines(DashLines(BoxLines));
 
+            //Calc the sizes of the glass pieces for cutting
             box.GlassSizeString = glassSize.GetGlassSize(box._length, box._height, box._width, box._thickness);
-            box._thickness = 10.2;
         }
 
         public Dictionary<string, Line> CalcLines(Dictionary<string, CornerPoint> CornerPoints)

@@ -13,9 +13,9 @@
         </Grid.ColumnDefinitions>
         <Canvas x:Name="DrawCanvas" Grid.Column="1" Margin="30,60,0,0" Width="1000" Height="400" VerticalAlignment="Top" HorizontalAlignment="Left">
         </Canvas>
-        <Canvas x:Name="SizeCanvas" Grid.Column="1" Margin="30,460,0,0" Width="1000" Height="400" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Canvas x:Name="SizeCanvas" Grid.Column="1" Margin="30,500,0,0" Width="1000" Height="400" VerticalAlignment="Top" HorizontalAlignment="Left">
         </Canvas>
-        <Rectangle Grid.Column="1" HorizontalAlignment="Left" Height="840" Margin="10,40,0,0" VerticalAlignment="Top" Width="1040" Stroke="Black" RadiusX="5" RadiusY="5"/>
+        <Rectangle Grid.Column="1" HorizontalAlignment="Left" Height="440" Margin="10,40,0,0" VerticalAlignment="Top" Width="1040" Stroke="Black" RadiusX="5" RadiusY="5"/>
         <TextBox x:Name="HeightTextBox" Text="{Binding Height, Mode=TwoWay}" Grid.Column="0" HorizontalAlignment="Left" Margin="183,86,0,0" VerticalAlignment="Top" Height="20" Width="40"/>
         <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="119,94,0,0" Text="Height" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBox x:Name="LengthTextBox" Text="{Binding Length, Mode=TwoWay}" Grid.Column="0" HorizontalAlignment="Left" Margin="183,141,0,0" VerticalAlignment="Top" Width="40" Height="20.3"/>

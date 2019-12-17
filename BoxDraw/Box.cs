@@ -16,7 +16,7 @@ namespace BoxDraw
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName)); // same as: if (PropertyChanged != null) { PropertyChanged(this, new PropertyChangedEventArgs(propertyName)); }
         }
 
-        public const double DOWNSIZE = 0.95;
+        public const double DOWNSIZE = 0.95; //This assures that the box will still be smaller than the canvas (after proportional fitting)
 
         public double _height;
         public double Height
@@ -99,7 +99,7 @@ namespace BoxDraw
 
         public double CalcWidthShift(double length)
         {
-            double diagonal = 0.6 * length;
+            double diagonal = 0.6 * length; //Resize the diagonal lines ("width") for perspective compensation
             return Math.Sqrt((diagonal * diagonal) / 2); //Pythagorean theorem
         }
 

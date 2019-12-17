@@ -48,10 +48,10 @@ namespace BoxDraw
         {
             string sideSize = null;
 
-            _width = (width - thickness) + GRINDING;
-            _height = (height - thickness * 2) + GRINDING;
+            _width = (width - thickness * 2) + GRINDING;
+            _height = (height - thickness) + GRINDING;
 
-            return sideSize = $"{_length} x {_height} cm";
+            return sideSize = $"{_width} x {_height} cm";
         }
 
         public string GetGlassSize(double length, double height, double width, double thickness)
